@@ -7,6 +7,7 @@
 //
 
 #include "classes.h"
+#include "utiles.h"
 #include <iostream>
 using namespace std;
 
@@ -35,8 +36,21 @@ void carte::afficher(){
         }
         cout<<endl;
     }
+    cout<<endl;
 }
 
-void carte::generer(){
-    
+void carte::generer(){ // méthode de random à améliorer
+    long haut,bas,gauche,droite;
+    haut=random_at_most(5);
+    bas=random_at_most(5);
+    gauche=random_at_most(5);
+    droite=random_at_most(5);
+    tab[0][1]=haut;
+    tab[1][0]=gauche;
+    tab[1][2]=droite;
+    tab[2][1]=bas;
+    /*cout<<"haut : "<<haut<<endl;
+    cout<<"droite : "<<droite<<endl;
+    cout<<"bas : "<<bas<<endl;
+    cout<<"gauche : "<<gauche<<endl;*/
 }

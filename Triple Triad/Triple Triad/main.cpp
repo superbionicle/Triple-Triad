@@ -5,5 +5,9 @@ using namespace std;
 int main(){
     carte tab;
     tab.afficher();
+    tab.generer();
+    tab.afficher();
+    tab.generer();
+    tab.afficher();
     return 0;
 }

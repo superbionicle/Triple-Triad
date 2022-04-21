@@ -11,7 +11,7 @@
 
 class carte{
     int **tab;
-    int couleur;
+    int couleur=0;
 public:
     carte();
     ~carte();
