@@ -11,9 +11,7 @@
 #include <iostream>
 using namespace std;
 
-carte::carte(){
-    //tab={{0,0,0},{0,0,0},{0,0,0}};
-    //tab=new int[3][3];
+carte::carte(){ // constructeur
     tab=new int*[3];
     for(int i=0;i<3;i++){
         tab[i]=new int[3];
@@ -25,7 +23,7 @@ carte::carte(){
     }
 }
 
-carte::~carte(){
+carte::~carte(){ // destructeur
     delete tab;
 }
 
@@ -39,7 +37,7 @@ void carte::afficher(){
     cout<<endl;
 }
 
-void carte::generer(){ // méthode de random à améliorer
+void carte::generer(){ // générateur de valeurs // méthode de random à améliorer
     long haut,bas,gauche,droite;
     haut=random_at_most(5);
     bas=random_at_most(5);
@@ -53,4 +51,50 @@ void carte::generer(){ // méthode de random à améliorer
     cout<<"droite : "<<droite<<endl;
     cout<<"bas : "<<bas<<endl;
     cout<<"gauche : "<<gauche<<endl;*/
+}
+
+void carte::operator=(carte a_copier){
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            tab[i][j]=a_copier.tab[i][j];
+        }
+    }
+}
+
+void carte::affiche_ligne(int k){
+    for(int i=0;i<3;i++){
+        cout<<tab[k][i];
+    }
+}
+
+plateau::plateau(){
+    carte carte_nulle;
+    carte_nulle.afficher();
+    /*table=new carte*[3];
+    for(int i=0;i<3;i++){
+        table[i]=new carte[3];
+    }
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            table[i][j]=carte_nulle;
+        }
+    }*/
+}
+
+plateau::~plateau(){
+    delete table;
+}
+
+void plateau::afficher(){
+    /*for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            for(int k=0;k<3;k++){
+                table[i][j].affiche_ligne(k);
+            }
+            cout<<"bite"<<endl;
+        }
+        cout<<endl;
+    }
+    cout<<endl;*/
+    table[0][0].afficher();
 }

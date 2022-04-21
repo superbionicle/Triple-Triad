@@ -17,14 +17,21 @@ public:
     ~carte();
     void afficher();
     void generer();
+    void operator =(carte a_copier);
+    void affiche_ligne(int k);
 };
-/*class plateau{
-    carte table[9];
-public:
-    
-}
 
-class joueur{
+class plateau{ //utiliser la classe vector et les itérateurs
+    carte **table;
+    int emplacement_libre=0;
+public:
+    carte emplacement(int i,int j){return(table[i][j]);};
+    plateau();
+    ~plateau();
+    void afficher();
+};
+
+/*class joueur{
     carte main[5];
 public:
     void jouer();
