@@ -10,13 +10,15 @@
 #define classes_h
 
 class carte{
-    int gauche,droite,haut,bas;
+    int **tab;
     int couleur;
 public:
-    
-}
-
-class plateau{
+    carte();
+    ~carte();
+    void afficher();
+    void generer();
+};
+/*class plateau{
     carte table[9];
 public:
     
@@ -27,5 +29,5 @@ class joueur{
 public:
     void jouer();
     
-}
+}*/
 #endif /* classes_h */
