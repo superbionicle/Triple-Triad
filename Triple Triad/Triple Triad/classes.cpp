@@ -12,7 +12,12 @@
 using namespace std;
 
 carte::carte(){ // constructeur
-    tab=new int*[3];
+    gauche=0;
+    droite=0;
+    haut=0;
+    bas=0;
+    
+    /*tab=new int*[3];
     for(int i=0;i<3;i++){
         tab[i]=new int[3];
     }
@@ -20,33 +25,37 @@ carte::carte(){ // constructeur
         for(int j=0;j<3;j++){
             tab[i][j]=0;
         }
-    }
+    }*/
 }
 
 carte::~carte(){ // destructeur
-    delete tab;
+    //delete tab;
 }
 
 void carte::afficher(){
-    for(int i=0;i<3;i++){
+    cout<<"~"<<haut<<"~"<<endl;
+    cout<<gauche<<"~"<<droite<<endl;
+    cout<<"~"<<bas<<"~"<<endl;
+    
+    /*for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             cout<<tab[i][j]<<" ";
         }
         cout<<endl;
     }
-    cout<<endl;
+    cout<<endl;*/
 }
 
 void carte::generer(){ // générateur de valeurs // méthode de random à améliorer
-    long haut,bas,gauche,droite;
+    //long haut,bas,gauche,droite;
     haut=random_at_most(5);
     bas=random_at_most(5);
     gauche=random_at_most(5);
     droite=random_at_most(5);
-    tab[0][1]=haut;
+    /*tab[0][1]=haut;
     tab[1][0]=gauche;
     tab[1][2]=droite;
-    tab[2][1]=bas;
+    tab[2][1]=bas;*/
     /*cout<<"haut : "<<haut<<endl;
     cout<<"droite : "<<droite<<endl;
     cout<<"bas : "<<bas<<endl;
@@ -54,18 +63,22 @@ void carte::generer(){ // générateur de valeurs // méthode de random à amél
 }
 
 void carte::operator=(carte a_copier){
-    for(int i=0;i<3;i++){
+    a_copier.haut=haut;
+    a_copier.bas=bas;
+    a_copier.gauche=gauche;
+    a_copier.droite=droite;
+    /*for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             tab[i][j]=a_copier.tab[i][j];
         }
-    }
+    }*/
 }
 
-void carte::affiche_ligne(int k){
+/*void carte::affiche_ligne(int k){
     for(int i=0;i<3;i++){
         cout<<tab[k][i];
     }
-}
+}*/
 
 plateau::plateau(){
     carte carte_nulle;
@@ -97,4 +110,8 @@ void plateau::afficher(){
     }
     cout<<endl;*/
     table[0][0].afficher();
+}
+
+void joueur::jouer(){
+    cout<<"test joueur"<<endl;
 }

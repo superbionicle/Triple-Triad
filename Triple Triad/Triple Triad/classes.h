@@ -10,15 +10,16 @@
 #define classes_h
 
 class carte{
-    int **tab;
-    int couleur=0;
+    //int **tab;
+    int gauche,droite,haut,bas;
+    int couleur=0; // 1 : rouge / 2 : bleu
 public:
     carte();
     ~carte();
     void afficher();
     void generer();
     void operator =(carte a_copier);
-    void affiche_ligne(int k);
+    //void affiche_ligne(int k);
 };
 
 class plateau{ //utiliser la classe vector et les itérateurs
@@ -29,12 +30,14 @@ public:
     plateau();
     ~plateau();
     void afficher();
+    int espace(){return (emplacement_libre);}
+    void up_espace(){emplacement_libre++;}
 };
 
-/*class joueur{
-    carte main[5];
+class joueur{
+    carte *main;
 public:
     void jouer();
     
-}*/
+};
 #endif /* classes_h */
