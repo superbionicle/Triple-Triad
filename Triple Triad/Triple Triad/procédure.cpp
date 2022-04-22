@@ -12,7 +12,7 @@
 // initialisation
 
 /*
- 1. On démarre un plateau vide (tableau de cartes de 9 emplacements
+ 1. On démarre un plateau vide (tableau de cartes de 9 emplacements)
  2. On crée deux mains pour les joueurs (tableau de cartes de 5 emplacements)
  3. On dit quel joueur commence (on lui donne le token pour jouer)
  */

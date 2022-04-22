@@ -19,17 +19,16 @@ public:
     void afficher();
     void generer();
     void operator =(carte a_copier);
-    //void affiche_ligne(int k);
+    void def_couleur(int couleur){couleur=couleur;}
 };
 
 class plateau{ //utiliser la classe vector et les itérateurs
-    carte **table;
+    carte *table;
     int emplacement_libre=0;
 public:
-    carte emplacement(int i,int j){return(table[i][j]);};
     plateau();
     ~plateau();
-    void afficher();
+    //void afficher();
     int espace(){return (emplacement_libre);}
     void up_espace(){emplacement_libre++;}
 };
@@ -37,7 +36,9 @@ public:
 class joueur{
     carte *main;
 public:
-    void jouer();
+    joueur();
+    //~joueur();
+    void jouer(plateau table);
     
 };
 #endif /* classes_h */
